@@ -10,12 +10,24 @@ import {TaskService} from './services/task.service';
 import {FormsModule} from '@angular/forms';
 import { TaskTableComponent } from './task-table/task-table.component';
 import { AddTaskComponent } from './add-task/add-task.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import {AuthService} from './services/auth.service';
+import {AuthGuard} from './services/auth.guard';
+import {RouterModule, Routes} from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+const appRoutes: Routes = [
+  {path: '', component: LoginPageComponent},
+  {path: 'home', component: HomeComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskTableComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    LoginPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +36,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
     AngularFireStorageModule,
     AngularFireAuthModule,
     FormsModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [TaskService],
   bootstrap: [AppComponent]

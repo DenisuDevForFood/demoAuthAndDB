@@ -1,0 +1,10 @@
+<h1>Base</h1>
+
+<div *ngIf="authService.user$ | async as user; else login">
+     {{user|json}}
+  <button class="btn btn-danger" (click)="authService.signOut()">Logout</button>
+</div>
+
+<ng-template #login>
+  <button class="btn btn-success" (click)="authService.googleSignin()">Login with google</button>
+</ng-template>
