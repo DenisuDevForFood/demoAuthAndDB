@@ -1,0 +1,15 @@
+<form class="form-check-label form-group form-inline">
+  <div class="row">
+    <div class="col col-form-label">
+      <label>Name</label>
+      <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="this.name">
+    </div>
+    <div class="col col-form-label">
+      <label>Description</label>
+      <input type="text" class="form-control" placeholder="Description" name="description" [(ngModel)]="this.description">
+    </div>
+  </div>
+  <div class="col col-form-label">
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+  </div>
+</form>
